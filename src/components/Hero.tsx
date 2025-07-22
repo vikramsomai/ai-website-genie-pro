@@ -7,12 +7,13 @@ const Hero = () => {
     <section className="relative h-screen min-h-[800px] overflow-hidden flex items-center">
       {/* Background Image with Premium Overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[10s] ease-out"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         {/* Multi-layer Gradient Overlay for Premium Look */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary/75"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-primary/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
       </div>
 
       {/* Floating Elements */}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Globe, Menu, X, Zap } from "lucide-react";
+import { ShoppingCart, Globe, Menu, X, Zap, Sparkles } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,57 +14,97 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80;
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+    <header className={`fixed top-0 w-full z-50 transition-all duration-700 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-lg shadow-xl border-b border-white/20' 
-        : 'bg-transparent'
+        ? 'bg-white/98 backdrop-blur-xl shadow-2xl border-b border-primary/10' 
+        : 'bg-gradient-to-b from-black/20 via-black/10 to-transparent'
     }`}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           {/* Premium Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer">
+          <div className="flex items-center space-x-4 group cursor-pointer">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-premium rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-500 group-hover:scale-110">
-                <Zap className="w-6 h-6 text-white" />
+              <div className="w-14 h-14 bg-gradient-premium rounded-3xl flex items-center justify-center shadow-xl group-hover:shadow-glow transition-all duration-700 group-hover:scale-110 group-hover:rotate-3">
+                <Zap className="w-7 h-7 text-white drop-shadow-lg" />
+                <Sparkles className="w-3 h-3 text-premium-gold absolute -top-1 -right-1 animate-pulse" />
               </div>
-              <div className="absolute inset-0 bg-gradient-premium rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-premium rounded-3xl opacity-0 group-hover:opacity-30 blur-2xl transition-all duration-700"></div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-premium bg-clip-text text-transparent font-poppins">
+              <h1 className={`text-3xl font-bold bg-gradient-premium bg-clip-text text-transparent font-poppins transition-all duration-300 ${
+                isScrolled ? 'text-2xl' : 'text-3xl'
+              }`}>
                 TECHSQUAD
               </h1>
-              <p className="text-xs text-muted-foreground font-medium tracking-wider uppercase">
+              <p className={`text-xs font-medium tracking-[0.2em] uppercase transition-all duration-300 ${
+                isScrolled ? 'text-muted-foreground/80' : 'text-white/80'
+              }`}>
                 Premium LED Solutions
               </p>
             </div>
           </div>
 
           {/* Navigation - Desktop */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {['Products', 'Solutions', 'Technology', 'Support'].map((item, index) => (
-              <a 
-                key={item}
-                href={`#${item.toLowerCase()}`} 
-                className="relative group py-2 px-4 font-medium text-foreground hover:text-primary transition-all duration-300"
+          <nav className="hidden lg:flex items-center space-x-10">
+            {[
+              { name: 'Products', id: 'products' },
+              { name: 'Categories', id: 'categories' },
+              { name: 'About', id: 'about' },
+              { name: 'Contact', id: 'contact' }
+            ].map((item) => (
+              <button 
+                key={item.name}
+                onClick={() => scrollToSection(item.id)}
+                className={`relative group py-3 px-5 font-semibold transition-all duration-500 rounded-xl ${
+                  isScrolled 
+                    ? 'text-foreground hover:text-primary hover:bg-accent/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
               >
-                {item}
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-premium scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </a>
+                {item.name}
+                <span className="absolute inset-x-2 -bottom-1 h-0.5 bg-gradient-premium scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center rounded-full"></span>
+                <div className="absolute inset-0 rounded-xl bg-gradient-premium opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+              </button>
             ))}
           </nav>
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
             {/* Language & Cart - Desktop */}
-            <div className="hidden sm:flex items-center space-x-3">
-              <Button variant="ghost" size="sm" className="rounded-xl hover:bg-accent/50">
+            <div className="hidden sm:flex items-center space-x-4">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className={`rounded-2xl font-medium transition-all duration-300 ${
+                  isScrolled 
+                    ? 'hover:bg-accent/60' 
+                    : 'hover:bg-white/20 text-white/90 hover:text-white'
+                }`}
+              >
                 <Globe className="w-4 h-4 mr-2" />
                 EN
               </Button>
-              <Button variant="outline" size="icon" className="relative rounded-xl border-2 hover:border-primary/50">
+              <Button 
+                variant={isScrolled ? "outline" : "glass"} 
+                size="icon" 
+                className="relative rounded-2xl border-2 hover:border-primary/60 transition-all duration-300 hover:scale-105"
+              >
                 <ShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-2 -right-2 bg-premium-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg">
+                <span className="absolute -top-2 -right-2 bg-gradient-premium text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-xl animate-pulse">
                   0
                 </span>
               </Button>
@@ -97,16 +137,20 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden mt-6 pb-6 border-t border-border/50">
-            <nav className="flex flex-col space-y-4 pt-6">
-              {['Products', 'Solutions', 'Technology', 'Support'].map((item) => (
-                <a 
-                  key={item}
-                  href={`#${item.toLowerCase()}`} 
-                  className="flex items-center py-3 px-4 rounded-xl text-foreground hover:text-primary hover:bg-accent/50 transition-all duration-300 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+            <nav className="flex flex-col space-y-2 pt-6">
+              {[
+                { name: 'Products', id: 'products' },
+                { name: 'Categories', id: 'categories' },
+                { name: 'About', id: 'about' },
+                { name: 'Contact', id: 'contact' }
+              ].map((item) => (
+                <button 
+                  key={item.name}
+                  onClick={() => scrollToSection(item.id)}
+                  className="flex items-center py-4 px-5 rounded-2xl text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-accent/30 hover:to-primary/10 transition-all duration-500 font-semibold text-left border border-transparent hover:border-primary/20"
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </button>
               ))}
               <div className="flex items-center justify-between pt-4 border-t border-border/50">
                 <Button variant="outline" size="sm" className="flex-1 mr-3 rounded-xl">

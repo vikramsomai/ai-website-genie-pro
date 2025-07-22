@@ -13,11 +13,15 @@ const Index = () => {
     <div className="min-h-screen bg-background font-inter">
       <Header />
       <Hero />
-      <CategorySelector 
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
-      />
-      <ProductGrid selectedCategory={selectedCategory} />
+      <div id="categories">
+        <CategorySelector 
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+        />
+      </div>
+      <div id="products">
+        <ProductGrid selectedCategory={selectedCategory} />
+      </div>
       <Footer />
       <WhatsAppFloat />
     </div>
