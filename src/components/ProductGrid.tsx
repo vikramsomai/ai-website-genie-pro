@@ -32,7 +32,7 @@ const products = [
     id: 3,
     name: "FlexiCurve LED System",
     category: "flexible",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=500&h=400&fit=crop&crop=center",
+    image: "https://vcardking.com/uploads/product-image/6998/1000038411.jpg",
     price: "₹75,000",
     originalPrice: "₹85,000",
     rating: 4.7,
@@ -87,8 +87,8 @@ interface ProductGridProps {
 }
 
 const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
-  const filteredProducts = selectedCategory === "all" 
-    ? products 
+  const filteredProducts = selectedCategory === "all"
+    ? products
     : products.filter(product => product.category === selectedCategory);
 
   const getBadgeColor = (badge: string) => {
@@ -119,7 +119,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
             <Award className="w-4 h-4 text-primary" />
             <span className="text-primary font-medium tracking-wide">Premium Collection</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-6xl font-bold text-primary mb-6 font-poppins">
             Featured
             <span className="block bg-gradient-to-r from-premium-gold to-yellow-500 bg-clip-text text-transparent">
@@ -127,7 +127,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
             </span>
           </h2>
           <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
-            Discover our premium LED display solutions with cutting-edge technology, 
+            Discover our premium LED display solutions with cutting-edge technology,
             competitive pricing, and unmatched quality.
           </p>
         </div>
@@ -159,7 +159,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 {/* Hover Actions */}
                 <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
                   <Button variant="glass" size="icon" className="rounded-full">
@@ -179,11 +179,10 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-4 h-4 ${
-                          i < Math.floor(product.rating)
+                        className={`w-4 h-4 ${i < Math.floor(product.rating)
                             ? 'text-premium-gold fill-current'
                             : 'text-muted-foreground/30'
-                        }`}
+                          }`}
                       />
                     ))}
                     <span className="text-sm text-muted-foreground ml-2">
@@ -227,18 +226,18 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
 
                 {/* Action Buttons */}
                 <div className="grid grid-cols-2 gap-3 pt-2">
-                  <Button 
-                    variant="outline" 
-                    size="default" 
+                  <Button
+                    variant="outline"
+                    size="default"
                     className="rounded-xl group/btn"
                     disabled={!product.inStock}
                   >
                     <ShoppingCart className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
                     Add to Cart
                   </Button>
-                  <Button 
-                    variant="whatsapp" 
-                    size="default" 
+                  <Button
+                    variant="whatsapp"
+                    size="default"
                     className="rounded-xl group/btn"
                     onClick={() => window.open(`https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in ${product.name}`, '_blank')}
                   >
@@ -250,7 +249,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
 
               {/* Glow Effect on Hover */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                   style={{ boxShadow: '0 0 0 1px rgba(var(--premium-gold), 0.2), 0 0 20px rgba(var(--premium-gold), 0.1)' }}>
+                style={{ boxShadow: '0 0 0 1px rgba(var(--premium-gold), 0.2), 0 0 20px rgba(var(--premium-gold), 0.1)' }}>
               </div>
             </div>
           ))}

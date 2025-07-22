@@ -28,11 +28,10 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-700 ${
-      isScrolled 
-        ? 'bg-white/98 backdrop-blur-xl shadow-2xl border-b border-primary/10' 
-        : 'bg-gradient-to-b from-black/20 via-black/10 to-transparent'
-    }`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-700 ${isScrolled
+      ? 'bg-white/98 backdrop-blur-xl shadow-2xl border-b border-primary/10'
+      : 'bg-gradient-to-b from-black/20 via-black/10 to-transparent'
+      }`}>
       <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           {/* Premium Logo */}
@@ -45,14 +44,12 @@ const Header = () => {
               <div className="absolute inset-0 bg-gradient-premium rounded-3xl opacity-0 group-hover:opacity-30 blur-2xl transition-all duration-700"></div>
             </div>
             <div>
-              <h1 className={`text-3xl font-bold bg-gradient-premium bg-clip-text text-transparent font-poppins transition-all duration-300 ${
-                isScrolled ? 'text-2xl' : 'text-3xl'
-              }`}>
+              <h1 className={`text-3xl font-bold bg-gradient-premium bg-clip-text text-transparent font-poppins transition-all duration-300 ${isScrolled ? 'text-2xl' : 'text-3xl'
+                }`}>
                 TECHSQUAD
               </h1>
-              <p className={`text-xs font-medium tracking-[0.2em] uppercase transition-all duration-300 ${
-                isScrolled ? 'text-muted-foreground/80' : 'text-white/80'
-              }`}>
+              <p className={`text-xs font-medium tracking-[0.2em] uppercase transition-all duration-300 ${isScrolled ? 'text-muted-foreground/80' : 'text-white/80'
+                }`}>
                 Premium LED Solutions
               </p>
             </div>
@@ -66,14 +63,13 @@ const Header = () => {
               { name: 'About', id: 'about' },
               { name: 'Contact', id: 'contact' }
             ].map((item) => (
-              <button 
+              <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative group py-3 px-5 font-semibold transition-all duration-500 rounded-xl ${
-                  isScrolled 
-                    ? 'text-foreground hover:text-primary hover:bg-accent/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
-                }`}
+                className={`relative group py-3 px-5 font-semibold transition-all duration-500 rounded-xl ${isScrolled
+                  ? 'text-foreground hover:text-primary hover:bg-accent/30'
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+                  }`}
               >
                 {item.name}
                 <span className="absolute inset-x-2 -bottom-1 h-0.5 bg-gradient-premium scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center rounded-full"></span>
@@ -86,21 +82,20 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             {/* Language & Cart - Desktop */}
             <div className="hidden sm:flex items-center space-x-4">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className={`rounded-2xl font-medium transition-all duration-300 ${
-                  isScrolled 
-                    ? 'hover:bg-accent/60' 
-                    : 'hover:bg-white/20 text-white/90 hover:text-white'
-                }`}
+              <Button
+                variant="ghost"
+                size="sm"
+                className={`rounded-2xl font-medium transition-all duration-300 ${isScrolled
+                  ? 'hover:bg-accent/60'
+                  : 'hover:bg-white/20 text-white/90 hover:text-white'
+                  }`}
               >
                 <Globe className="w-4 h-4 mr-2" />
                 EN
               </Button>
-              <Button 
-                variant={isScrolled ? "outline" : "glass"} 
-                size="icon" 
+              <Button
+                variant={isScrolled ? "outline" : "glass"}
+                size="icon"
                 className="relative rounded-2xl border-2 hover:border-primary/60 transition-all duration-300 hover:scale-105"
               >
                 <ShoppingCart className="w-5 h-5" />
@@ -112,8 +107,8 @@ const Header = () => {
 
             {/* CTA Button - Desktop */}
             <div className="hidden md:block">
-              <Button 
-                variant="premium" 
+              <Button
+                variant="premium"
                 size="default"
                 className="rounded-xl font-semibold"
                 onClick={() => window.open('https://wa.me/91XXXXXXXXXX', '_blank')}
@@ -129,7 +124,7 @@ const Header = () => {
               className="lg:hidden rounded-xl"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-8 h-8 text-white text-2xl" />}
             </Button>
           </div>
         </div>
@@ -144,7 +139,7 @@ const Header = () => {
                 { name: 'About', id: 'about' },
                 { name: 'Contact', id: 'contact' }
               ].map((item) => (
-                <button 
+                <button
                   key={item.name}
                   onClick={() => scrollToSection(item.id)}
                   className="flex items-center py-4 px-5 rounded-2xl text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-accent/30 hover:to-primary/10 transition-all duration-500 font-semibold text-left border border-transparent hover:border-primary/20"
@@ -157,9 +152,9 @@ const Header = () => {
                   <ShoppingCart className="w-4 h-4 mr-2" />
                   Cart (0)
                 </Button>
-                <Button 
-                  variant="premium" 
-                  size="sm" 
+                <Button
+                  variant="premium"
+                  size="sm"
                   className="flex-1 rounded-xl"
                   onClick={() => window.open('https://wa.me/91XXXXXXXXXX', '_blank')}
                 >

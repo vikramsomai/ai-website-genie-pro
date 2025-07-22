@@ -25,11 +25,11 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center max-w-6xl">
-        <div className="animate-fade-in space-y-8">
+      <div className="relative z-12 container mx-auto px-6 text-center max-w-6xl">
+        <div className="animate-fade-in space-y-8 mt-10">
           {/* Premium Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-6">
-            <Sparkles className="w-4 h-4 text-premium-gold" />
+          <div className="max-sm:mt-80 mt-10 inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-6">
+            <Sparkles className="w-4 h-4 text-premium-gold " />
             <span className="text-white/90 font-medium tracking-wide">Premium LED Display Technology</span>
             <TrendingUp className="w-4 h-4 text-premium-gold" />
           </div>
@@ -38,14 +38,14 @@ const Hero = () => {
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white font-poppins leading-tight">
               <span className="block">Transform Your</span>
-              <span className="block bg-gradient-to-r from-premium-gold via-yellow-300 to-premium-gold bg-clip-text text-transparent animate-glow">
+              <span className="">
                 Vision
               </span>
               <span className="block">Into Reality</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
-              Experience the future of digital advertising with our cutting-edge LED display solutions. 
+              Experience the future of digital advertising with our cutting-edge LED display solutions.
               Premium quality, stunning visuals, and unmatched performance.
             </p>
           </div>
@@ -68,9 +68,9 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button 
-              variant="premium" 
-              size="xl" 
+            <Button
+              variant="premium"
+              size="xl"
               className="group relative overflow-hidden"
               onClick={() => window.open('https://wa.me/91XXXXXXXXXX', '_blank')}
             >
@@ -78,10 +78,10 @@ const Hero = () => {
               Get Free Consultation
               <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
             </Button>
-            
-            <Button 
-              variant="glass" 
-              size="xl" 
+
+            <Button
+              variant="glass"
+              size="xl"
               className="group"
             >
               <Sparkles className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
@@ -89,27 +89,11 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="text-white/60 text-sm font-medium">Trusted by leading brands</div>
-            <div className="flex space-x-6">
-              {['Enterprise', 'Retail', 'Entertainment', 'Government'].map((sector) => (
-                <span key={sector} className="text-white/50 text-sm px-3 py-1 border border-white/20 rounded-full">
-                  {sector}
-                </span>
-              ))}
-            </div>
-          </div>
+
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
-        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center p-2">
-          <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse"></div>
-        </div>
-        <p className="text-white/50 text-xs mt-2 font-medium tracking-wider">SCROLL</p>
-      </div>
+
     </section>
   );
 };

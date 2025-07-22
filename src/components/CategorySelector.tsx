@@ -58,15 +58,15 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
             <CheckCircle className="w-4 h-4 text-premium-gold" />
             <span className="text-premium-gold font-medium tracking-wide">Premium Product Range</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-6xl font-bold text-primary mb-6 font-poppins">
             Our Product
-            <span className="block bg-gradient-to-r from-premium-gold to-yellow-500 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-premium-gold to-yellow-500 bg-clip-text text-transparent pb-2">
               Categories
             </span>
           </h2>
           <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">
-            Choose from our comprehensive range of premium LED display solutions, 
+            Choose from our comprehensive range of premium LED display solutions,
             each engineered for perfection and designed for every application.
           </p>
         </div>
@@ -75,13 +75,12 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
           {categories.map((category) => {
             const Icon = category.icon;
             const isSelected = selectedCategory === category.id;
-            
+
             return (
               <div
                 key={category.id}
-                className={`group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 ${
-                  isSelected ? 'scale-105 z-10' : ''
-                }`}
+                className={`group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 ${isSelected ? 'scale-105 z-10' : ''
+                  }`}
                 onClick={() => onCategoryChange(category.id)}
               >
                 {/* Popular Badge */}
@@ -92,33 +91,30 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
                 )}
 
                 {/* Card */}
-                <div className={`relative p-8 rounded-3xl border-2 transition-all duration-500 overflow-hidden ${
-                  isSelected 
-                    ? 'border-premium-gold bg-gradient-card shadow-premium' 
+                <div className={`relative p-8 rounded-3xl border-2 transition-all duration-500 overflow-hidden ${isSelected
+                    ? 'border-premium-gold bg-gradient-card shadow-premium'
                     : 'border-border bg-card shadow-lg hover:border-premium-gold/50 hover:shadow-2xl'
-                }`}>
-                  
+                  }`}>
+
                   {/* Glow Effect */}
                   {isSelected && (
                     <div className="absolute inset-0 bg-premium-gold/5 rounded-3xl"></div>
                   )}
 
                   {/* Icon Container */}
-                  <div className={`relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${
-                    isSelected 
-                      ? 'bg-premium-gold text-white shadow-glow scale-110' 
+                  <div className={`relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${isSelected
+                      ? 'bg-premium-gold text-white shadow-glow scale-110'
                       : 'bg-accent text-accent-foreground group-hover:bg-premium-gold group-hover:text-white group-hover:scale-110'
-                  }`}>
+                    }`}>
                     <Icon className="w-8 h-8" />
                   </div>
-                  
+
                   {/* Content */}
-                  <h3 className={`font-bold text-xl mb-3 font-poppins transition-colors duration-300 ${
-                    isSelected ? 'text-premium-gold' : 'text-foreground group-hover:text-premium-gold'
-                  }`}>
+                  <h3 className={`font-bold text-xl mb-3 font-poppins transition-colors duration-300 ${isSelected ? 'text-premium-gold' : 'text-foreground group-hover:text-premium-gold'
+                    }`}>
                     {category.name}
                   </h3>
-                  
+
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {category.description}
                   </p>
@@ -134,9 +130,9 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
                   </div>
 
                   {/* Action */}
-                  <Button 
-                    variant={isSelected ? "premium" : "outline"} 
-                    size="sm" 
+                  <Button
+                    variant={isSelected ? "premium" : "outline"}
+                    size="sm"
                     className="w-full group/btn transition-all duration-300"
                   >
                     {isSelected ? 'Selected' : 'View Products'}
