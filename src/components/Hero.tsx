@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-cityscape.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen min-h-[800px] overflow-hidden flex items-center">
+    <section className="relative h-screen min-h-[800px] overflow-hidden flex items-center pt-20 md:pt-0">
       {/* Background Image with Premium Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[10s] ease-out"
