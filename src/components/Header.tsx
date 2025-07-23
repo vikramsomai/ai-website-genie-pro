@@ -131,8 +131,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-6 pb-6 border-t border-border/50">
-            <nav className="flex flex-col space-y-2 pt-6">
+          <div className="lg:hidden mt-6 pb-6 border-t border-border/50 bg-background/95 backdrop-blur-xl rounded-2xl mx-4 shadow-2xl border border-border/20">
+            <nav className="flex flex-col space-y-2 pt-6 px-4">
               {[
                 { name: 'Products', id: 'products' },
                 { name: 'Categories', id: 'categories' },
