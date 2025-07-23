@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Globe, Menu, X, Zap, Sparkles } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import CartDrawer from "@/components/CartDrawer";
 
 const Header = () => {
+  const { getTotalItems, sendToWhatsApp } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -93,16 +96,7 @@ const Header = () => {
                 <Globe className="w-4 h-4 mr-2" />
                 EN
               </Button>
-              <Button
-                variant={isScrolled ? "outline" : "glass"}
-                size="icon"
-                className="relative rounded-2xl border-2 hover:border-primary/60 transition-all duration-300 hover:scale-105"
-              >
-                <ShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-2 -right-2 bg-gradient-premium text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-xl animate-pulse">
-                  0
-                </span>
-              </Button>
+              <CartDrawer variant={isScrolled ? "outline" : "glass"} />
             </div>
 
             {/* CTA Button - Desktop */}
@@ -148,9 +142,21 @@ const Header = () => {
                 </button>
               ))}
               <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                <Button variant="outline" size="sm" className="flex-1 mr-3 rounded-xl">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex-1 mr-3 rounded-xl"
+                  onClick={() => {
+                    if (getTotalItems() > 0) {
+                      sendToWhatsApp();
+                    } else {
+                      alert('Your cart is empty!');
+                    }
+                    setIsMenuOpen(false);
+                  }}
+                >
                   <ShoppingCart className="w-4 h-4 mr-2" />
-                  Cart (0)
+                  Cart ({getTotalItems()})
                 </Button>
                 <Button
                   variant="premium"

@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, MessageCircle, Star, Eye, Heart, Zap, Award } from "lucide-react";
+import { ShoppingCart, MessageCircle, Star, Eye, Heart, Zap, Award, Plus } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/components/ui/use-toast";
 
 const products = [
   {
@@ -87,6 +89,25 @@ interface ProductGridProps {
 }
 
 const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+  
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      id: product.id.toString(),
+      name: product.name,
+      category: product.category,
+      price: product.price,
+      image: product.image
+    });
+    
+    toast({
+      title: "Added to Cart",
+      description: `${product.name} has been added to your cart.`,
+      duration: 2000,
+    });
+  };
+
   const filteredProducts = selectedCategory === "all"
     ? products
     : products.filter(product => product.category === selectedCategory);
@@ -231,8 +252,9 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                     size="default"
                     className="rounded-xl group/btn"
                     disabled={!product.inStock}
+                    onClick={() => handleAddToCart(product)}
                   >
-                    <ShoppingCart className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                    <Plus className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
                     Add to Cart
                   </Button>
                   <Button
