@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -91,7 +92,8 @@ export default {
 				'2xl': 'var(--shadow-2xl)',
 				'premium': 'var(--shadow-premium)',
 				'glow': 'var(--shadow-glow)',
-				'float': 'var(--shadow-float)'
+				'float': 'var(--shadow-float)',
+				'neon': 'var(--shadow-neon)'
 			},
 			backdropBlur: {
 				'xs': 'var(--blur-sm)',
@@ -174,6 +176,49 @@ export default {
 						transform: 'translateY(0)',
 						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
 					}
+				},
+				'pulse-glow': {
+					'0%': {
+						boxShadow: '0 0 20px hsl(var(--premium-gold) / 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px hsl(var(--premium-gold) / 0.8), 0 0 60px hsl(var(--premium-gold) / 0.4)'
+					},
+					'100%': {
+						boxShadow: '0 0 20px hsl(var(--premium-gold) / 0.5)'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
+				},
+				'rotate-slow': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'lightning': {
+					'0%, 100%': {
+						opacity: '0.3'
+					},
+					'50%': {
+						opacity: '1'
+					}
+				},
+				'neon-pulse': {
+					'0%': {
+						boxShadow: '0 0 20px hsl(var(--premium-gold) / 0.5), 0 0 40px hsl(var(--premium-gold) / 0.3), 0 0 60px hsl(var(--premium-gold) / 0.1)'
+					},
+					'100%': {
+						boxShadow: '0 0 30px hsl(var(--premium-gold) / 0.8), 0 0 60px hsl(var(--premium-gold) / 0.6), 0 0 90px hsl(var(--premium-gold) / 0.4)'
+					}
 				}
 			},
 			animation: {
@@ -184,7 +229,12 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite alternate',
 				'slide-up': 'slide-up 0.6s ease-out',
-				'bounce-gentle': 'bounce-gentle 2s infinite'
+				'bounce-gentle': 'bounce-gentle 2s infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'shimmer': 'shimmer 2s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'lightning': 'lightning 3s ease-in-out infinite',
+				'neon-pulse': 'neon-pulse 2s ease-in-out infinite alternate'
 			},
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
