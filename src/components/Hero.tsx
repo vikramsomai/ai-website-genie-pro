@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
   const [currentDisplay, setCurrentDisplay] = useState(0);
-  
+
   const ledDisplays = [
     "PREMIUM LED DISPLAYS",
-    "4K ULTRA HD QUALITY", 
+    "4K ULTRA HD QUALITY",
     "OUTDOOR WEATHERPROOF",
     "INDOOR RETAIL SCREENS",
     "DIGITAL BILLBOARDS"
@@ -22,11 +22,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[800px] overflow-hidden flex items-center pt-20 md:pt-0">
+    <section className="relative h-screen min-h-[1200px] overflow-hidden flex items-center pt-20 md:pt-0">
       {/* Animated LED Grid Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-primary/20 to-black"></div>
-        
+
         {/* LED Grid Pattern */}
         <div className="absolute inset-0 opacity-30">
           <div className="grid grid-cols-12 gap-2 h-full w-full p-4">
@@ -62,7 +62,7 @@ const Hero = () => {
           <div className="absolute top-40 right-32 w-2 h-2 bg-premium-blue rounded-full animate-pulse-glow"></div>
           <div className="absolute bottom-32 left-1/3 w-4 h-4 border-2 border-premium-gold rotate-45 animate-float opacity-80"></div>
           <div className="absolute top-1/3 right-20 w-2 h-2 bg-premium-gold rounded animate-neon-pulse"></div>
-          
+
           {/* Moving particles */}
           {Array.from({ length: 20 }).map((_, i) => (
             <div
@@ -80,10 +80,10 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-12 container mx-auto px-6 text-center max-w-6xl">
-        <div className="animate-fade-in space-y-8 mt-10">
+      <div className="relative z-10 container mx-auto px-6 text-center max-w-6xl ">
+        <div className="animate-fade-in space-y-8">
           {/* Premium Badge */}
-          <div className="max-sm:mt-80 mt-10 inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-6">
+          <div className="max-sm:mt-60  inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-6">
             <Sparkles className="w-4 h-4 text-premium-gold " />
             <span className="text-white/90 font-medium tracking-wide">Premium LED Display Technology</span>
             <TrendingUp className="w-4 h-4 text-premium-gold" />
@@ -112,9 +112,9 @@ const Hero = () => {
 
           {/* Main Headline */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white font-poppins leading-tight">
-              <span className="block animate-slide-up">Transform Your</span>
-              <span className="text-premium-gold animate-glow">
+            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white font-poppins leading-tight">
+              <span className="block">Transform Your</span>
+              <span className=" ">
                 Vision
               </span>
               <span className="block animate-slide-up" style={{ animationDelay: '0.2s' }}>Into Reality</span>
@@ -124,31 +124,33 @@ const Hero = () => {
               Experience the future of digital advertising with our cutting-edge LED display solutions.
               Premium quality, stunning visuals, and unmatched performance.
             </p>
-          </div>
+          </div >
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto my-12">
-            {[
-              { number: "500+", label: "Projects Delivered" },
-              { number: "99.9%", label: "Uptime Guarantee" },
-              { number: "24/7", label: "Support Available" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-3xl md:text-4xl font-bold text-premium-gold mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
+          < div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto my-12" >
+            {
+              [
+                { number: "500+", label: "Projects Delivered" },
+                { number: "99.9%", label: "Uptime Guarantee" },
+                { number: "24/7", label: "Support Available" }
+              ].map((stat, index) => (
+                <div key={index} className="text-center group">
+                  <div className="text-3xl md:text-4xl font-bold text-premium-gold mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {stat.number}
+                  </div>
+                  <div className="text-white/70 font-medium">{stat.label}</div>
                 </div>
-                <div className="text-white/70 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+              ))
+            }
+          </div >
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          < div className="flex flex-col sm:flex-row gap-6 justify-center items-center" >
             <Button
               variant="premium"
               size="xl"
               className="group relative overflow-hidden"
-              onClick={() => window.open('https://wa.me/91XXXXXXXXXX', '_blank')}
+              onClick={() => window.open('https://wa.me/919274488477', '_blank')}
             >
               <Play className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
               Get Free Consultation
@@ -163,14 +165,20 @@ const Hero = () => {
               <Sparkles className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
               Explore Our Work
             </Button>
-          </div>
+          </div >
 
 
+        </div >
+      </div >
+
+      {/* Scroll Indicator */}
+      {/* <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce-gentle mt-20">
+        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center p-2">
+          <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse"></div>
         </div>
-      </div>
-
-
-    </section>
+        <p className="text-white/50 text-xs mt-2 font-medium tracking-wider">SCROLL</p>
+      </div> */}
+    </section >
   );
 };
 
