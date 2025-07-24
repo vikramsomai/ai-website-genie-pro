@@ -8,7 +8,7 @@ const products = [
     id: 1,
     name: "P10 Premium Outdoor Display",
     category: "outdoor",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&h=400&fit=crop&crop=center",
+    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSDkWpt1YkMGFw0Ila1efr5UcRCFBgKIZQzN-uaoj7EbV7ADVYxjRFYSEIqq3D_8JZG9kzWq5UvWGK3Mgy7Kmuhc9SP5EPVQ_SUlGnyb_-fQ-8prMkLbPOfbkjW&usqp=CAc",
     price: "₹45,000",
     originalPrice: "₹55,000",
     rating: 4.9,
@@ -60,7 +60,7 @@ const products = [
     id: 5,
     name: "P8 Giant Outdoor Billboard",
     category: "outdoor",
-    image: "https://images.unsplash.com/photo-1573495612937-568a38c9ddc6?w=500&h=400&fit=crop&crop=center",
+    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSOG52xhzUr7yLqU8xa4h0ChgCvFMLmiso3SZH5w-D254uIFmm8KvR71RZs9umcQE5qmr0ALCQ9Gx7jbrqQAU_eof4itBPdLGHKtmEY4gQPQrnNqhaCMykWHQ&usqp=CAc",
     price: "₹68,000",
     originalPrice: "₹78,000",
     rating: 4.9,
@@ -201,8 +201,8 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                       <Star
                         key={i}
                         className={`w-4 h-4 ${i < Math.floor(product.rating)
-                            ? 'text-premium-gold fill-current'
-                            : 'text-muted-foreground/30'
+                          ? 'text-premium-gold fill-current'
+                          : 'text-muted-foreground/30'
                           }`}
                       />
                     ))}
