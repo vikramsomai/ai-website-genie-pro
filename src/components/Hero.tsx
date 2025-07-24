@@ -1,27 +1,82 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Play, Sparkles, TrendingUp, Zap, Monitor } from "lucide-react";
 import heroImage from "@/assets/hero-cityscape.jpg";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [currentDisplay, setCurrentDisplay] = useState(0);
+  
+  const ledDisplays = [
+    "PREMIUM LED DISPLAYS",
+    "4K ULTRA HD QUALITY", 
+    "OUTDOOR WEATHERPROOF",
+    "INDOOR RETAIL SCREENS",
+    "DIGITAL BILLBOARDS"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDisplay((prev) => (prev + 1) % ledDisplays.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative h-screen min-h-[800px] overflow-hidden flex items-center pt-20 md:pt-0">
-      {/* Background Image with Premium Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[10s] ease-out"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        {/* Multi-layer Gradient Overlay for Premium Look */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-primary/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
-      </div>
+      {/* Animated LED Grid Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-primary/20 to-black"></div>
+        
+        {/* LED Grid Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="grid grid-cols-12 gap-2 h-full w-full p-4">
+            {Array.from({ length: 144 }).map((_, i) => (
+              <div
+                key={i}
+                className="bg-premium-gold/20 rounded-sm animate-pulse"
+                style={{
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${1 + Math.random() * 2}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-2 h-2 bg-premium-gold rounded-full animate-bounce-gentle opacity-60"></div>
-        <div className="absolute top-40 right-32 w-1 h-1 bg-white rounded-full animate-pulse"></div>
-        <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-premium-gold rounded-full animate-float opacity-80"></div>
-        <div className="absolute top-1/3 right-20 w-1 h-1 bg-white rounded-full animate-pulse delay-1000"></div>
+        {/* Dynamic Lightning Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-px h-32 bg-premium-gold animate-lightning opacity-60"></div>
+          <div className="absolute top-3/4 right-1/3 w-px h-24 bg-premium-blue animate-lightning opacity-40" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/3 left-1/2 w-px h-40 bg-premium-gold animate-lightning opacity-50" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        {/* Scanning Lines */}
+        <div className="absolute inset-0">
+          <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-premium-gold to-transparent animate-slide-down opacity-60"></div>
+          <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-premium-blue to-transparent animate-slide-down opacity-40" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+
+        {/* Floating Circuit Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-3 h-3 border border-premium-gold rounded animate-rotate-slow opacity-70"></div>
+          <div className="absolute top-40 right-32 w-2 h-2 bg-premium-blue rounded-full animate-pulse-glow"></div>
+          <div className="absolute bottom-32 left-1/3 w-4 h-4 border-2 border-premium-gold rotate-45 animate-float opacity-80"></div>
+          <div className="absolute top-1/3 right-20 w-2 h-2 bg-premium-gold rounded animate-neon-pulse"></div>
+          
+          {/* Moving particles */}
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-premium-gold rounded-full animate-float opacity-60"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Content */}
@@ -34,17 +89,38 @@ const Hero = () => {
             <TrendingUp className="w-4 h-4 text-premium-gold" />
           </div>
 
+          {/* LED Display Simulator */}
+          <div className="mb-8">
+            <div className="relative mx-auto max-w-4xl">
+              <div className="bg-black/80 border-4 border-premium-gold/50 rounded-2xl p-8 shadow-neon backdrop-blur-lg">
+                <div className="flex items-center justify-center space-x-4 mb-4">
+                  <Monitor className="w-8 h-8 text-premium-gold animate-pulse" />
+                  <div className="text-premium-gold text-sm font-mono">LED DISPLAY ACTIVE</div>
+                  <Zap className="w-6 h-6 text-premium-blue animate-lightning" />
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl md:text-6xl font-bold text-premium-gold font-mono tracking-wider mb-2 animate-neon-pulse">
+                    {ledDisplays[currentDisplay]}
+                  </div>
+                  <div className="h-1 bg-premium-gold/30 rounded-full overflow-hidden">
+                    <div className="h-full bg-premium-gold animate-shimmer rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Main Headline */}
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white font-poppins leading-tight">
-              <span className="block">Transform Your</span>
-              <span className="">
+              <span className="block animate-slide-up">Transform Your</span>
+              <span className="text-premium-gold animate-glow">
                 Vision
               </span>
-              <span className="block">Into Reality</span>
+              <span className="block animate-slide-up" style={{ animationDelay: '0.2s' }}>Into Reality</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light animate-fade-in" style={{ animationDelay: '0.5s' }}>
               Experience the future of digital advertising with our cutting-edge LED display solutions.
               Premium quality, stunning visuals, and unmatched performance.
             </p>
