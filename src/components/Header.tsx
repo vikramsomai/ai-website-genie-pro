@@ -106,7 +106,7 @@ const Header = () => {
                 variant="premium"
                 size="default"
                 className="rounded-xl font-semibold"
-                onClick={() => window.open('https://wa.me/91XXXXXXXXXX', '_blank')}
+                onClick={() => window.open('https://wa.me/917600886661', '_blank')}
               >
                 Get Quote
               </Button>
@@ -143,9 +143,9 @@ const Header = () => {
                 </button>
               ))}
               <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="flex-1 mr-3 rounded-xl"
                   onClick={() => {
                     if (getTotalItems() > 0) {
@@ -163,7 +163,7 @@ const Header = () => {
                   variant="premium"
                   size="sm"
                   className="flex-1 rounded-xl"
-                  onClick={() => window.open('https://wa.me/91XXXXXXXXXX', '_blank')}
+                  onClick={() => window.open('https://wa.me/917600886661', '_blank')}
                 >
                   Get Quote
                 </Button>

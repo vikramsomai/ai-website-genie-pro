@@ -7,7 +7,7 @@ const Footer = () => {
       {/* LED Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-primary/5 to-transparent"></div>
-        
+
         {/* Subtle LED Grid */}
         <div className="absolute inset-0 opacity-10">
           <div className="grid grid-cols-20 gap-1 h-full w-full">

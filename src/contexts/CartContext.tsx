@@ -69,15 +69,15 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
 
     const message = formatCartForWhatsApp();
-    const phoneNumber = '91XXXXXXXXXX'; // Replace with actual number
+    const phoneNumber = '917600886661'; // Replace with actual number
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const formatCartForWhatsApp = () => {
-    let message = "🛒 *Quote Request from TechSquad Website*\n\n";
-    message += "📋 *Selected Products:*\n";
-    
+    let message = "Quote Request from TechSquad Website*\n\n";
+    message += "*Selected Products:*\n";
+
     items.forEach((item, index) => {
       message += `\n${index + 1}. *${item.name}*\n`;
       message += `   Category: ${item.category}\n`;
@@ -85,8 +85,8 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       message += `   Quantity: ${item.quantity}\n`;
     });
 
-    message += `\n📊 *Total Items:* ${getTotalItems()}\n`;
-    message += "\n💬 *Message:*\nHi! I'm interested in the above LED products. Please provide me with a detailed quote including installation and delivery charges.\n";
+    message += `\n*Total Items:* ${getTotalItems()}\n`;
+    message += "\n*Message:*\nHi! I'm interested in the above LED products. Please provide me with a detailed quote including installation and delivery charges.\n";
     message += "\nThank you!";
 
     return message;

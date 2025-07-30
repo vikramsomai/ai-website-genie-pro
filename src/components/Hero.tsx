@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, TrendingUp, Zap, Monitor } from "lucide-react";
 import heroImage from "@/assets/hero-cityscape.jpg";
 import { useEffect, useState } from "react";
+import { url } from "inspector";
+
+import nykVideo from "@/assets/nyk.mp4";
 
 const Hero = () => {
   const [currentDisplay, setCurrentDisplay] = useState(0);
@@ -23,6 +26,15 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen min-h-[1200px] overflow-hidden flex items-center pt-20 md:pt-0">
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src={nykVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
       {/* Animated LED Grid Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-primary/20 to-black"></div>
@@ -92,27 +104,35 @@ const Hero = () => {
           {/* LED Display Simulator */}
           <div className="mb-8">
             <div className="relative mx-auto max-w-4xl">
-              <div className="bg-black/80 border-4 border-premium-gold/50 rounded-2xl p-8 shadow-neon backdrop-blur-lg">
-                <div className="flex items-center justify-center space-x-4 mb-4">
-                  <Monitor className="w-8 h-8 text-premium-gold animate-pulse" />
-                  <div className="text-premium-gold text-sm font-mono">LED DISPLAY ACTIVE</div>
-                  <Zap className="w-6 h-6 text-premium-blue animate-lightning" />
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-6xl font-bold text-premium-gold font-mono tracking-wider mb-2 animate-neon-pulse">
-                    {ledDisplays[currentDisplay]}
+              <div className="relative p-[2px] rounded-2xl bg-gradient-to-r from-pink-500 via-blue-500 to-green-400 animate-glow">
+                <div className="rounded-2xl bg-black/80 p-8 shadow-lg backdrop-blur-lg">
+                  {/* Header */}
+                  <div className="flex items-center justify-center space-x-4 mb-4">
+                    <Monitor className="w-8 h-8 text-premium-gold animate-pulse" />
+                    <div className="text-premium-gold text-sm font-mono">LED DISPLAY ACTIVE</div>
+                    <Zap className="w-6 h-6 text-premium-blue animate-lightning" />
                   </div>
-                  <div className="h-1 bg-premium-gold/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-premium-gold animate-shimmer rounded-full"></div>
+
+                  {/* RGB Glowing Text */}
+                  <div className="text-center">
+                    <div className="text-4xl md:text-6xl font-bold font-mono tracking-wider mb-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-blue-500 to-green-400 animate-text-glow">
+                      {ledDisplays[currentDisplay]}
+                    </div>
+                    <div className="h-1 bg-premium-gold/30 rounded-full overflow-hidden">
+                      <div className="h-full bg-premium-gold animate-shimmer rounded-full"></div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+
+
             </div>
           </div>
 
           {/* Main Headline */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white font-poppins leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white font-poppins leading-tight backdrop-blur-md">
               <span className="block">Transform Your</span>
               <span className=" ">
                 Vision
@@ -120,7 +140,7 @@ const Hero = () => {
               <span className="block animate-slide-up" style={{ animationDelay: '0.2s' }}>Into Reality</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in backdrop-blur-md" style={{ animationDelay: '0.5s' }}>
               Experience the future of digital advertising with our cutting-edge LED display solutions.
               Premium quality, stunning visuals, and unmatched performance.
             </p>

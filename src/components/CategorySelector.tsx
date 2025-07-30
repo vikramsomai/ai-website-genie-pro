@@ -9,7 +9,7 @@ const categories = [
     icon: Building2,
     description: "Weather-resistant displays for outdoor advertising",
     features: ["IP65 Rated", "High Brightness", "Energy Efficient"],
-    popular: true
+    popular: false
   },
   {
     id: "indoor",
@@ -44,13 +44,13 @@ interface CategorySelectorProps {
 
 const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelectorProps) => {
   return (
-    <section className="py-24 relative overflow-hidden" id="products">
+    <section className="py-24 relative overflow-hidden " id="products">
       {/* LED Grid Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-primary/10 to-black/50"></div>
-        
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-primary/10 to-black/50 "></div>
+
         {/* LED Grid Pattern */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 ">
           <div className="grid grid-cols-16 gap-1 h-full w-full p-2">
             {Array.from({ length: 256 }).map((_, i) => (
               <div
@@ -115,7 +115,7 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
             return (
               <div
                 key={category.id}
-                className={`group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:scale-105 glass-morphism lightning-border animate-fade-in ${isSelected ? 'scale-105 z-10 shadow-neon' : ''
+                className={`rounded-xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:scale-105 glass-morphism lightning-border animate-fade-in ${isSelected ? 'scale-105 z-10 shadow-neon' : ''
                   }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => onCategoryChange(category.id)}
@@ -129,8 +129,8 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
 
                 {/* Card */}
                 <div className={`relative p-8 rounded-3xl border-2 transition-all duration-500 overflow-hidden bg-white/5 backdrop-blur-lg ${isSelected
-                    ? 'border-premium-gold shadow-neon'
-                    : 'border-white/20 hover:border-premium-gold/50 hover:shadow-glow'
+                  ? 'border-premium-gold shadow-neon'
+                  : 'border-white/20 hover:border-premium-gold/50 hover:shadow-glow'
                   }`}>
 
                   {/* Glow Effect */}
@@ -140,8 +140,8 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
 
                   {/* Icon Container */}
                   <div className={`relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${isSelected
-                      ? 'bg-premium-gold text-black shadow-neon scale-110 animate-pulse-glow'
-                      : 'bg-white/10 text-premium-gold group-hover:bg-premium-gold group-hover:text-black group-hover:scale-110'
+                    ? 'bg-premium-gold text-black shadow-neon scale-110 animate-pulse-glow'
+                    : 'bg-white/10 text-premium-gold group-hover:bg-premium-gold group-hover:text-black group-hover:scale-110'
                     }`}>
                     <Icon className="w-8 h-8" />
                   </div>

@@ -6,11 +6,11 @@ import { useToast } from "@/components/ui/use-toast";
 const products = [
   {
     id: 1,
-    name: "P10 Premium Outdoor Display",
+    name: "P-3 OUTDOOR LED SCREENS",
     category: "outdoor",
-    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSDkWpt1YkMGFw0Ila1efr5UcRCFBgKIZQzN-uaoj7EbV7ADVYxjRFYSEIqq3D_8JZG9kzWq5UvWGK3Mgy7Kmuhc9SP5EPVQ_SUlGnyb_-fQ-8prMkLbPOfbkjW&usqp=CAc",
-    price: "₹45,000",
-    originalPrice: "₹55,000",
+    image: "https://vcardking.com/uploads/product-image/7026/1000038514.jpg",
+    price: "₹5,800",
+    originalPrice: "₹6,200",
     rating: 4.9,
     reviews: 127,
     features: ["10mm Pixel Pitch", "IP65 Weather Resistant", "5000 nits Brightness", "Energy Efficient"],
@@ -58,16 +58,16 @@ const products = [
   },
   {
     id: 5,
-    name: "P8 Giant Outdoor Billboard",
+    name: "P-5 OUTDOOR LED SCREENS",
     category: "outdoor",
-    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSOG52xhzUr7yLqU8xa4h0ChgCvFMLmiso3SZH5w-D254uIFmm8KvR71RZs9umcQE5qmr0ALCQ9Gx7jbrqQAU_eof4itBPdLGHKtmEY4gQPQrnNqhaCMykWHQ&usqp=CAc",
-    price: "₹68,000",
-    originalPrice: "₹78,000",
+    image: "https://vcardking.com/uploads/product-image/7018/1000038511.jpg",
+    price: "₹3,600",
+    originalPrice: "₹4,000",
     rating: 4.9,
     reviews: 156,
     features: ["8mm Pixel Pitch", "Large Format", "Remote Monitoring", "Weatherproof"],
     badge: "Enterprise",
-    inStock: false
+    inStock: true
   },
   {
     id: 6,
@@ -91,7 +91,7 @@ interface ProductGridProps {
 const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
   const { addToCart } = useCart();
   const { toast } = useToast();
-  
+
   const handleAddToCart = (product: any) => {
     addToCart({
       id: product.id.toString(),
@@ -100,7 +100,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
       price: product.price,
       image: product.image
     });
-    
+
     toast({
       title: "Added to Cart",
       description: `${product.name} has been added to your cart.`,
@@ -129,7 +129,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
       {/* LED Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-primary/5 to-black/30"></div>
-        
+
         {/* Dynamic Lightning Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-px h-32 bg-premium-gold animate-lightning opacity-40"></div>
@@ -282,7 +282,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                     variant="whatsapp"
                     size="default"
                     className="rounded-xl group/btn hover:scale-105 transition-all duration-300"
-                    onClick={() => window.open(`https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in ${product.name}`, '_blank')}
+                    onClick={() => window.open(`https://wa.me/917600886661?text=Hi, I'm interested in ${product.name}`, '_blank')}
                   >
                     <MessageCircle className="w-4 h-4 mr-2 group-hover/btn:scale-110 animate-pulse transition-transform" />
                     Order Now
