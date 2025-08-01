@@ -42,7 +42,7 @@ const Header = () => {
           <div className="flex items-center space-x-4 group cursor-pointer">
             <div className="relative">
               <div className="w-14 h-14 bg-gradient-premium rounded-3xl flex items-center justify-center shadow-xl group-hover:shadow-neon transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 lightning-border animate-pulse-glow">
-                <img src="logo.jpeg" />
+                <img src="../logo.jpeg" />
               </div>
               <div className="absolute inset-0 bg-gradient-premium rounded-3xl opacity-0 group-hover:opacity-30 blur-2xl transition-all duration-700"></div>
             </div>

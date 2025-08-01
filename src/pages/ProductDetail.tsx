@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { products } from '../productDetails'
 import { useEffect } from "react";
+import { SocialIcon } from "react-social-icons/component";
 
 const ProductDetail = () => {
 
@@ -200,7 +201,7 @@ const ProductDetail = () => {
                                     className="w-full rounded-xl hover:scale-105 transition-all duration-300"
                                     onClick={() => window.open(`https://wa.me/919274488477?text=Hi, I'm interested in ${product.name}`, '_blank')}
                                 >
-                                    <MessageCircle className="w-5 h-5 mr-2 animate-pulse" />
+                                    <SocialIcon className="w-8 h-8 animate-pulse" url="www.whatsapp.com" />
                                     Order via WhatsApp
                                 </Button>
                             </div>

@@ -4,6 +4,7 @@ import { useCart } from "@/contexts/CartContext";
 import { useToast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
 import { products } from '../productDetails'
+import { SocialIcon } from "react-social-icons/component";
 
 interface ProductGridProps {
   selectedCategory: string;
@@ -196,7 +197,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                 {/* Pricing */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <span className="text-2xl font-bold text-premium-gold animate-pulse-glow">
+                    <span className="text-2xl font-bold text-premium-gold ">
                       {product.price}
                     </span>
                     <span className="text-sm text-white/50 line-through">
@@ -223,19 +224,19 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                   <Button
                     variant="whatsapp"
                     size="default"
-                    className="rounded-xl group/btn hover:scale-105 transition-all duration-300"
+                    className="group/btn hover:scale-105 transition-all duration-300"
                     onClick={() => window.open(`https://wa.me/919274488477?text=Hi, I'm interested in ${product.name}`, '_blank')}
                   >
-                    <MessageCircle className="w-4 h-4 mr-2 group-hover/btn:scale-110 animate-pulse transition-transform" />
+                    <SocialIcon className="animate-pulse" network="whatsapp" />
                     Order Now
                   </Button>
                 </div>
               </div>
 
               {/* Glow Effect on Hover */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              {/* <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ boxShadow: '0 0 0 1px rgba(var(--premium-gold), 0.2), 0 0 20px rgba(var(--premium-gold), 0.1)' }}>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
