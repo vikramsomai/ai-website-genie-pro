@@ -58,7 +58,7 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
         <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-primary/10 to-black/50 "></div>
 
         {/* LED Grid Pattern */}
-        <div className="absolute inset-0 opacity-20 ">
+        {/* <div className="absolute inset-0 opacity-20 ">
           <div className="grid grid-cols-16 gap-1 h-full w-full p-2">
             {Array.from({ length: 256 }).map((_, i) => (
               <div
@@ -71,7 +71,7 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
               />
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Scanning Lines */}
         <div className="absolute inset-0">

@@ -42,7 +42,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black via-primary/20 to-black"></div>
 
         {/* LED Grid Pattern */}
-        <div className="absolute inset-0 opacity-30">
+        {/* <div className="absolute inset-0 opacity-30">
           <div className="grid grid-cols-12 gap-2 h-full w-full p-4">
             {Array.from({ length: 60 }).map((_, i) => ( // reduce from 144 to 60
               <div
@@ -56,30 +56,30 @@ const Hero = () => {
             ))}
 
           </div>
-        </div>
+        </div> */}
 
         {/* Dynamic Lightning Effects */}
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-px h-32 bg-premium-gold animate-lightning opacity-60"></div>
           <div className="absolute top-3/4 right-1/3 w-px h-24 bg-premium-blue animate-lightning opacity-40" style={{ animationDelay: '1s' }}></div>
           <div className="absolute bottom-1/3 left-1/2 w-px h-40 bg-premium-gold animate-lightning opacity-50" style={{ animationDelay: '2s' }}></div>
-        </div>
+        </div> */}
 
         {/* Scanning Lines */}
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
           <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-premium-gold to-transparent animate-slide-down opacity-60"></div>
           <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-premium-blue to-transparent animate-slide-down opacity-40" style={{ animationDelay: '1.5s' }}></div>
-        </div>
+        </div> */}
 
         {/* Floating Circuit Elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-20 w-3 h-3 border border-premium-gold rounded animate-rotate-slow opacity-70"></div>
           <div className="absolute top-40 right-32 w-2 h-2 bg-premium-blue rounded-full animate-pulse-glow"></div>
           <div className="absolute bottom-32 left-1/3 w-4 h-4 border-2 border-premium-gold rotate-45 animate-float opacity-80"></div>
-          <div className="absolute top-1/3 right-20 w-2 h-2 bg-premium-gold rounded animate-neon-pulse"></div>
+          <div className="absolute top-1/3 right-20 w-2 h-2 bg-premium-gold rounded animate-neon-pulse"></div> */}
 
-          {/* Moving particles */}
-          {Array.from({ length: 20 }).map((_, i) => (
+        {/* Moving particles */}
+        {/* {Array.from({ length: 20 }).map((_, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-premium-gold rounded-full animate-float opacity-60"
@@ -90,8 +90,8 @@ const Hero = () => {
                 animationDuration: `${3 + Math.random() * 4}s`
               }}
             />
-          ))}
-        </div>
+          ))} */}
+        {/* </div> */}
       </div>
 
       {/* Content */}
