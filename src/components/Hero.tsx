@@ -25,15 +25,17 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[1200px] overflow-hidden flex items-center pt-20 md:pt-0">
+    <section className="relative h-screen min-h-[1300px] overflow-hidden flex items-center pt-20 md:pt-0">
       <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0 will-change-transform"
         src={nykVideo}
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
       />
+
 
       {/* Animated LED Grid Background */}
       <div className="absolute inset-0">
@@ -42,16 +44,17 @@ const Hero = () => {
         {/* LED Grid Pattern */}
         <div className="absolute inset-0 opacity-30">
           <div className="grid grid-cols-12 gap-2 h-full w-full p-4">
-            {Array.from({ length: 144 }).map((_, i) => (
+            {Array.from({ length: 60 }).map((_, i) => ( // reduce from 144 to 60
               <div
                 key={i}
-                className="bg-premium-gold/20 rounded-sm animate-pulse"
+                className="bg-premium-gold/20 rounded-sm animate-pulse will-change-transform"
                 style={{
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${1 + Math.random() * 2}s`
+                  animationDelay: `${Math.random() * 2}s`,
+                  animationDuration: `${2 + Math.random()}s`,
                 }}
               />
             ))}
+
           </div>
         </div>
 
