@@ -10,7 +10,7 @@ const WhatsAppFloat = () => {
           variant="whatsapp"
           size="xl"
           className="rounded-full w-16 h-16 shadow-2xl hover:shadow-neon transition-all duration-500 hover:scale-110 animate-float lightning-border"
-          onClick={() => window.open('https://wa.me/917600886661?text=Hi, I need help with LED displays!', '_blank')}
+          onClick={() => window.open('https://wa.me/919274488477?text=Hi, I need help with LED displays!', '_blank')}
         >
           <MessageCircle className="w-8 h-8 animate-pulse" />
         </Button>

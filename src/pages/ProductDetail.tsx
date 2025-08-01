@@ -198,7 +198,7 @@ const ProductDetail = () => {
                                     variant="whatsapp"
                                     size="lg"
                                     className="w-full rounded-xl hover:scale-105 transition-all duration-300"
-                                    onClick={() => window.open(`https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in ${product.name}`, '_blank')}
+                                    onClick={() => window.open(`https://wa.me/919274488477?text=Hi, I'm interested in ${product.name}`, '_blank')}
                                 >
                                     <MessageCircle className="w-5 h-5 mr-2 animate-pulse" />
                                     Order via WhatsApp

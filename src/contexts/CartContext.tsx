@@ -69,7 +69,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
 
     const message = formatCartForWhatsApp();
-    const phoneNumber = '917600886661'; // Replace with actual number
+    const phoneNumber = '919274488477'; // Replace with actual number
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };

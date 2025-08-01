@@ -4,86 +4,6 @@ import { useCart } from "@/contexts/CartContext";
 import { useToast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
 import { products } from '../productDetails'
-// const products = [
-//   {
-//     id: 1,
-//     name: "P-3 OUTDOOR LED SCREENS",
-//     category: "outdoor",
-//     image: "https://vcardking.com/uploads/product-image/7026/1000038514.jpg",
-//     price: "₹5,800",
-//     originalPrice: "₹6,200",
-//     rating: 4.9,
-//     reviews: 127,
-//     features: ["10mm Pixel Pitch", "IP65 Weather Resistant", "5000 nits Brightness", "Energy Efficient"],
-//     badge: "Best Seller",
-//     inStock: true
-//   },
-//   {
-//     id: 2,
-//     name: "P6 Ultra HD Indoor Panel",
-//     category: "indoor",
-//     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop&crop=center",
-//     price: "₹32,000",
-//     originalPrice: "₹38,000",
-//     rating: 4.8,
-//     reviews: 89,
-//     features: ["6mm Pixel Pitch", "4K Resolution", "Seamless Design", "Low Power"],
-//     badge: "Premium",
-//     inStock: true
-//   },
-//   {
-//     id: 3,
-//     name: "FlexiCurve LED System",
-//     category: "flexible",
-//     image: "https://vcardking.com/uploads/product-image/6998/1000038411.jpg",
-//     price: "₹75,000",
-//     originalPrice: "₹85,000",
-//     rating: 4.7,
-//     reviews: 43,
-//     features: ["Bendable Design", "360° Curves", "Creative Installation", "Professional Grade"],
-//     badge: "Innovation",
-//     inStock: true
-//   },
-//   {
-//     id: 4,
-//     name: "Pro A-Frame Digital Standee",
-//     category: "standee",
-//     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=400&fit=crop&crop=center",
-//     price: "₹25,000",
-//     originalPrice: "₹30,000",
-//     rating: 4.6,
-//     reviews: 67,
-//     features: ["Portable Design", "Easy Setup", "Battery Powered", "Remote Control"],
-//     badge: "Portable",
-//     inStock: true
-//   },
-//   {
-//     id: 5,
-//     name: "P-5 OUTDOOR LED SCREENS",
-//     category: "outdoor",
-//     image: "https://vcardking.com/uploads/product-image/7018/1000038511.jpg",
-//     price: "₹3,600",
-//     originalPrice: "₹4,000",
-//     rating: 4.9,
-//     reviews: 156,
-//     features: ["8mm Pixel Pitch", "Large Format", "Remote Monitoring", "Weatherproof"],
-//     badge: "Enterprise",
-//     inStock: true
-//   },
-//   {
-//     id: 6,
-//     name: "P4 Cinema Video Wall",
-//     category: "indoor",
-//     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop&crop=center",
-//     price: "₹95,000",
-//     originalPrice: "₹110,000",
-//     rating: 4.8,
-//     reviews: 98,
-//     features: ["4mm Pixel Pitch", "Cinema Quality", "Ultra Thin", "Perfect Alignment"],
-//     badge: "Professional",
-//     inStock: true
-//   }
-// ];
 
 interface ProductGridProps {
   selectedCategory: string;
@@ -304,7 +224,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                     variant="whatsapp"
                     size="default"
                     className="rounded-xl group/btn hover:scale-105 transition-all duration-300"
-                    onClick={() => window.open(`https://wa.me/917600886661?text=Hi, I'm interested in ${product.name}`, '_blank')}
+                    onClick={() => window.open(`https://wa.me/919274488477?text=Hi, I'm interested in ${product.name}`, '_blank')}
                   >
                     <MessageCircle className="w-4 h-4 mr-2 group-hover/btn:scale-110 animate-pulse transition-transform" />
                     Order Now

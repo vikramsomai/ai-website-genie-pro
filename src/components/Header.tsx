@@ -42,8 +42,7 @@ const Header = () => {
           <div className="flex items-center space-x-4 group cursor-pointer">
             <div className="relative">
               <div className="w-14 h-14 bg-gradient-premium rounded-3xl flex items-center justify-center shadow-xl group-hover:shadow-neon transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 lightning-border animate-pulse-glow">
-                <Zap className="w-7 h-7 text-white drop-shadow-lg animate-lightning" />
-                <Sparkles className="w-3 h-3 text-premium-gold absolute -top-1 -right-1 animate-pulse" />
+                <img src="logo.jpeg" />
               </div>
               <div className="absolute inset-0 bg-gradient-premium rounded-3xl opacity-0 group-hover:opacity-30 blur-2xl transition-all duration-700"></div>
             </div>
@@ -106,7 +105,7 @@ const Header = () => {
                 variant="premium"
                 size="default"
                 className="rounded-xl font-semibold"
-                onClick={() => window.open('https://wa.me/917600886661', '_blank')}
+                onClick={() => window.open('https://wa.me/919274488477', '_blank')}
               >
                 Get Quote
               </Button>
@@ -163,7 +162,7 @@ const Header = () => {
                   variant="premium"
                   size="sm"
                   className="flex-1 rounded-xl"
-                  onClick={() => window.open('https://wa.me/917600886661', '_blank')}
+                  onClick={() => window.open('https://wa.me/919274488477', '_blank')}
                 >
                   Get Quote
                 </Button>

@@ -15,7 +15,7 @@ const Index = () => {
       <Header />
       <Hero />
       <div id="categories" className="animate-fade-in">
-        <CategorySelector 
+        <CategorySelector
           selectedCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
         />
@@ -23,7 +23,7 @@ const Index = () => {
       <div id="products" className="animate-slide-up">
         <ProductGrid selectedCategory={selectedCategory} />
       </div>
-      
+
       {/* About Section */}
       <section id="about" className="py-20 bg-gradient-to-br from-background/50 to-accent/10 relative animate-fade-in">
         {/* Animated background elements */}
@@ -32,15 +32,15 @@ const Index = () => {
           <div className="absolute bottom-20 right-20 w-3 h-3 bg-premium-blue rounded-full animate-bounce-gentle"></div>
           <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-whatsapp rounded-full animate-float"></div>
         </div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent mb-6 animate-pulse-glow">
               About TechSquad
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-in">
-              We are a premium LED solutions provider with over 10 years of experience in delivering 
-              cutting-edge display technology. Our mission is to illuminate your ideas with the highest 
+              We are a premium LED solutions provider with over 10 years of experience in delivering
+              cutting-edge display technology. Our mission is to illuminate your ideas with the highest
               quality LED products and exceptional service.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -66,7 +66,7 @@ const Index = () => {
           <div className="absolute top-40 right-40 w-6 h-6 bg-premium-gold rounded-full animate-pulse-glow"></div>
           <div className="absolute bottom-40 left-40 w-4 h-4 bg-premium-blue rounded-full animate-lightning"></div>
         </div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent mb-6 animate-pulse-glow">
@@ -79,14 +79,15 @@ const Index = () => {
               <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 glass-morphism hover:shadow-glow hover:-translate-y-2 hover:scale-105 lightning-border animate-slide-up">
                 <h3 className="text-2xl font-semibold mb-4 text-primary hover:text-premium-gold transition-colors">Contact Information</h3>
                 <div className="space-y-4 text-left">
-                  <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                  {/* <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
                     <span className="font-medium mr-2">📧 Email:</span> info@techsquad.com
+                  </p> */}
+                  <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                    <span className="font-medium mr-2"> Phone:</span> +91 9274488477
                   </p>
                   <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-                    <span className="font-medium mr-2">📱 Phone:</span> +91 XXXXXXXXXX
-                  </p>
-                  <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-                    <span className="font-medium mr-2">📍 Address:</span> Mumbai, India
+                    <span className="font-medium mr-2">Address:</span>Parvat patiya near,chabutra circle
+                    Surat
                   </p>
                 </div>
               </div>
@@ -108,7 +109,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       <Footer />
       <WhatsAppFloat />
     </div>

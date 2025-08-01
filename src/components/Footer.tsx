@@ -48,8 +48,10 @@ const Footer = () => {
             {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2 group">
-                <div className="w-8 h-8 bg-premium-gold rounded-lg flex items-center justify-center group-hover:animate-pulse">
-                  <span className="text-black font-bold">T</span>
+                <div className="w-8 h-8 bg-premium-gold rounded-lg flex items-center justify-center">
+                  <span className="text-black font-bold">
+                    <img src="logo.jpeg" />
+                  </span>
                 </div>
                 <h3 className="text-xl font-bold font-poppins text-white group-hover:text-premium-gold transition-colors duration-300">TECHSQUAD</h3>
               </div>
@@ -71,7 +73,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold font-poppins text-white animate-glow">Quick Links</h4>
+              <h4 className="text-lg font-semibold font-poppins text-white ">Quick Links</h4>
               <div className="space-y-2">
                 <a href="#products" className="block text-white/70 hover:text-premium-gold transition-all duration-300 hover:translate-x-1">
                   Our Products
@@ -90,7 +92,7 @@ const Footer = () => {
 
             {/* Products */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold font-poppins text-white animate-glow">Products</h4>
+              <h4 className="text-lg font-semibold font-poppins text-white">Products</h4>
               <div className="space-y-2">
                 <a href="#" className="block text-white/70 hover:text-premium-gold transition-all duration-300 hover:translate-x-1">
                   Outdoor LED Screens
@@ -109,13 +111,13 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold font-poppins text-white animate-glow">Contact Info</h4>
+              <h4 className="text-lg font-semibold font-poppins text-white ">Contact Info</h4>
               <div className="space-y-3">
                 <div className="flex items-start space-x-3 text-white/70 hover:text-premium-gold transition-colors duration-300 group">
                   <MapPin className="w-5 h-5 text-premium-gold mt-1 flex-shrink-0 group-hover:animate-pulse" />
                   <div>
                     <p>
-                      123 Business District<br />
+                      Parvat patiya near,chabutra circle<br />
                       Surat, Gujarat 395009<br />
                       India
                     </p>
@@ -123,12 +125,12 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-white/70 hover:text-premium-gold transition-colors duration-300 group">
                   <Phone className="w-5 h-5 text-premium-gold group-hover:animate-pulse" />
-                  <p>+91 XXXXX XXXXX</p>
+                  <p>+91 9274488477</p>
                 </div>
-                <div className="flex items-center space-x-3 text-white/70 hover:text-premium-gold transition-colors duration-300 group">
+                {/* <div className="flex items-center space-x-3 text-white/70 hover:text-premium-gold transition-colors duration-300 group">
                   <Mail className="w-5 h-5 text-premium-gold group-hover:animate-pulse" />
                   <p>info@techsquad.com</p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -18,31 +18,31 @@ const CartDrawer = ({ variant = "outline" }: CartDrawerProps) => {
         <Button
           variant={variant}
           size="icon"
-          className="relative rounded-2xl border-2 hover:border-primary/60 transition-all duration-300 hover:scale-105"
+          className="relative rounded-2xl border-2 transition-all duration-300 "
         >
           <ShoppingCart className="w-5 h-5" />
           {getTotalItems() > 0 && (
-            <span className="absolute -top-2 -right-2 bg-gradient-premium text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-xl animate-pulse">
+            <span className="absolute -top-2 -right-2 bg-gradient-premium text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-xl ">
               {getTotalItems()}
             </span>
           )}
         </Button>
       </SheetTrigger>
-      
+
       <SheetContent className="w-full sm:max-w-lg glass-morphism border-l border-premium-gold/20">
         <SheetHeader>
-          <SheetTitle className="text-2xl font-bold text-white animate-glow">
+          <SheetTitle className="text-2xl font-bold text-white ">
             Shopping Cart ({getTotalItems()})
           </SheetTitle>
         </SheetHeader>
-        
+
         <div className="mt-6 space-y-4 h-[calc(100vh-200px)] overflow-y-auto">
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center space-y-4">
-              <ShoppingCart className="w-16 h-16 text-white/40 animate-pulse" />
+              <ShoppingCart className="w-16 h-16 text-white/40" />
               <p className="text-white/60">Your cart is empty</p>
-              <Button 
-                variant="glass" 
+              <Button
+                variant="glass"
                 onClick={() => setIsOpen(false)}
                 className="rounded-xl hover:shadow-glow"
               >
@@ -54,18 +54,18 @@ const CartDrawer = ({ variant = "outline" }: CartDrawerProps) => {
               {items.map((item, index) => (
                 <div key={item.id} className="p-4 rounded-2xl glass-morphism border border-premium-gold/20 hover:border-premium-gold/40 hover:shadow-glow transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                   <div className="flex items-center space-x-4">
-                    <img 
-                      src={item.image} 
+                    <img
+                      src={item.image}
                       alt={item.name}
                       className="w-16 h-16 rounded-xl object-cover border border-premium-gold/30"
                     />
                     <div className="flex-1">
                       <h3 className="font-semibold text-white">{item.name}</h3>
                       <p className="text-sm text-white/60">{item.category}</p>
-                      <p className="text-premium-gold font-bold animate-pulse-glow">{item.price}</p>
+                      <p className="text-premium-gold font-bold">{item.price}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between mt-4">
                     <div className="flex items-center space-x-2">
                       <Button
@@ -86,7 +86,7 @@ const CartDrawer = ({ variant = "outline" }: CartDrawerProps) => {
                         <Plus className="w-3 h-3" />
                       </Button>
                     </div>
-                    
+
                     <Button
                       variant="ghost"
                       size="icon"
@@ -98,18 +98,18 @@ const CartDrawer = ({ variant = "outline" }: CartDrawerProps) => {
                   </div>
                 </div>
               ))}
-              
+
               <div className="sticky bottom-0 pt-6 border-t border-premium-gold/20 bg-black/50 backdrop-blur-sm">
                 <Button
                   variant="premium"
                   size="lg"
-                  className="w-full rounded-xl font-semibold hover:scale-105 transition-all duration-300"
+                  className="w-full rounded-xl font-semibold hover:scale-105"
                   onClick={() => {
                     sendToWhatsApp();
                     setIsOpen(false);
                   }}
                 >
-                  <MessageCircle className="w-5 h-5 mr-2 animate-pulse" />
+                  <MessageCircle className="w-5 h-5 mr-2 " />
                   Send Quote Request via WhatsApp
                 </Button>
               </div>
