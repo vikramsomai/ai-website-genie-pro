@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Monitor, Building2, Smartphone, Store, ArrowRight, CheckCircle } from "lucide-react";
+import { Monitor, Building2, Smartphone, Store, ArrowRight, CheckCircle, LightbulbIcon } from "lucide-react";
 
 const categories = [
   {
@@ -31,6 +31,14 @@ const categories = [
     id: "standee",
     name: "A-Type Standee",
     icon: Store,
+    description: "Portable LED standees for events and retail",
+    features: ["Portable", "Quick Setup", "Battery Powered"],
+    popular: false
+  },
+  {
+    id: "Istandee",
+    name: "I-Type Standee",
+    icon: LightbulbIcon,
     description: "Portable LED standees for events and retail",
     features: ["Portable", "Quick Setup", "Battery Powered"],
     popular: false

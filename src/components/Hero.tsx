@@ -135,15 +135,14 @@ const Hero = () => {
 
           {/* Main Headline */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-white font-poppins leading-tight backdrop-blur-md">
+            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold font-poppins leading-tight backdrop-blur-md text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-blue-500 to-green-400 animate-text-glow">
               <span className="block">Transform Your</span>
-              <span className=" ">
-                Vision
-              </span>
+              <span className="">Vision</span>
               <span className="block animate-slide-up" style={{ animationDelay: '0.2s' }}>Into Reality</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in backdrop-blur-md" style={{ animationDelay: '0.5s' }}>
+
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in backdrop-blur-md bg-clip-text bg-gradient-to-r animate-text-glow" style={{ animationDelay: '0.5s' }}>
               Experience the future of digital advertising with our cutting-edge LED display solutions.
               Premium quality, stunning visuals, and unmatched performance.
             </p>

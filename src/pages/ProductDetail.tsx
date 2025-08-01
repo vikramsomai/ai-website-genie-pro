@@ -6,76 +6,15 @@ import { useCart } from "@/contexts/CartContext";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const products = [
-    {
-        id: 1,
-        name: "P10 Premium Outdoor Display",
-        category: "outdoor",
-        images: [
-            "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSDkWpt1YkMGFw0Ila1efr5UcRCFBgKIZQzN-uaoj7EbV7ADVYxjRFYSEIqq3D_8JZG9kzWq5UvWGK3Mgy7Kmuhc9SP5EPVQ_SUlGnyb_-fQ-8prMkLbPOfbkjW&usqp=CAc",
-            "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&crop=center",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
-        ],
-        price: "₹45,000",
-        originalPrice: "₹55,000",
-        rating: 4.9,
-        reviews: 127,
-        features: ["10mm Pixel Pitch", "IP65 Weather Resistant", "5000 nits Brightness", "Energy Efficient"],
-        badge: "Best Seller",
-        inStock: true,
-        description: "The P10 Premium Outdoor Display represents the pinnacle of LED display technology, designed specifically for outdoor applications where clarity, durability, and performance are paramount. This state-of-the-art display delivers exceptional visual quality with stunning brightness and remarkable energy efficiency.",
-        specifications: {
-            "Pixel Pitch": "10mm",
-            "Brightness": "5000 nits",
-            "Resolution": "1920x1080",
-            "Viewing Angle": "160° H / 160° V",
-            "Weather Rating": "IP65",
-            "Power Consumption": "800W/sqm",
-            "Refresh Rate": "3840Hz",
-            "Control System": "Nova MRV330",
-            "Cabinet Size": "960mm x 960mm",
-            "Weight": "45kg per panel"
-        },
-        warranty: "3 Years Comprehensive",
-        delivery: "7-10 Business Days",
-        installation: "Professional Installation Included"
-    },
-    {
-        id: 2,
-        name: "P6 Ultra HD Indoor Panel",
-        category: "indoor",
-        images: [
-            "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&crop=center",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
-        ],
-        price: "₹32,000",
-        originalPrice: "₹38,000",
-        rating: 4.8,
-        reviews: 89,
-        features: ["6mm Pixel Pitch", "4K Resolution", "Seamless Design", "Low Power"],
-        badge: "Premium",
-        inStock: true,
-        description: "Experience ultra-high definition visuals with our P6 Indoor Panel, engineered for premium indoor environments requiring exceptional image quality and seamless integration.",
-        specifications: {
-            "Pixel Pitch": "6mm",
-            "Brightness": "1000 nits",
-            "Resolution": "4K Ultra HD",
-            "Viewing Angle": "160° H / 160° V",
-            "Power Consumption": "450W/sqm",
-            "Refresh Rate": "3840Hz",
-            "Control System": "Linsn TS952",
-            "Cabinet Size": "576mm x 576mm",
-            "Weight": "28kg per panel"
-        },
-        warranty: "2 Years Comprehensive",
-        delivery: "5-7 Business Days",
-        installation: "Professional Installation Included"
-    },
-    // Add other products with similar structure...
-];
+import { products } from '../productDetails'
+import { useEffect } from "react";
 
 const ProductDetail = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const { id } = useParams();
     const navigate = useNavigate();
     const { addToCart } = useCart();
@@ -164,16 +103,16 @@ const ProductDetail = () => {
                 <div className="grid lg:grid-cols-2 gap-12">
                     {/* Product Images */}
                     <div className="space-y-6">
-                        <div className="relative glass-morphism rounded-3xl overflow-hidden lightning-border">
+                        <div className="relative glass-morphism rounded-3xl overflow-hidden lightning-border ">
                             <img
                                 src={product.images[0]}
                                 alt={product.name}
-                                className="w-full h-96 object-cover"
+                                className="w-full h-96 object-contain"
                             />
                             <div className="absolute top-4 left-4">
                                 <Badge className={`px-3 py-1 text-xs font-bold animate-neon-pulse ${product.badge === "Best Seller" ? "bg-premium-gold text-white" :
-                                        product.badge === "Premium" ? "bg-premium-blue text-white" :
-                                            "bg-primary text-white"
+                                    product.badge === "Premium" ? "bg-premium-blue text-white" :
+                                        "bg-primary text-white"
                                     }`}>
                                     {product.badge}
                                 </Badge>
@@ -322,7 +261,10 @@ const ProductDetail = () => {
                             <Zap className="w-6 h-6 mr-2 text-premium-gold animate-lightning" />
                             Product Description
                         </h3>
-                        <p className="text-white/80 text-lg leading-relaxed">{product.description}</p>
+                        <pre className="text-white/80 text-lg leading-relaxed whitespace-pre-wrap break-words">
+                            {product.description}
+                        </pre>
+
                     </div>
 
                     {/* Specifications */}
