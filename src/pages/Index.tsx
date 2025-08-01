@@ -69,7 +69,7 @@ const Index = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent mb-6 animate-pulse-glow">
+            <h2 className="text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent mb-6 ">
               Get In Touch
             </h2>
             <p className="text-lg text-muted-foreground mb-12 animate-fade-in">
@@ -83,7 +83,7 @@ const Index = () => {
                     <span className="font-medium mr-2">📧 Email:</span> info@techsquad.com
                   </p> */}
                   <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-                    <span className="font-medium mr-2"> Phone:</span> +91 9274488477
+                    <span className="font-medium mr-2">📱 Phone:</span> +91 9274488477
                   </p>
                   <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
                     <span className="font-medium mr-2">Address:</span>Parvat patiya near,chabutra circle

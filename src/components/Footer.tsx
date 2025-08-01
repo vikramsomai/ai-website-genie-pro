@@ -50,7 +50,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2 group">
                 <div className="w-8 h-8 bg-premium-gold rounded-lg flex items-center justify-center">
                   <span className="text-black font-bold">
-                    <img src="logo.jpeg" />
+                    <img src="../logo.jpeg" />
                   </span>
                 </div>
                 <h3 className="text-xl font-bold font-poppins text-white group-hover:text-premium-gold transition-colors duration-300">TECHSQUAD</h3>
