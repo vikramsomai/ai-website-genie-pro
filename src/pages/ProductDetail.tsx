@@ -145,7 +145,7 @@ const ProductDetail = () => {
                     <div className="space-y-8">
                         {/* Title & Rating */}
                         <div>
-                            <h1 className="text-4xl font-bold text-white mb-4 font-poppins animate-glow">
+                            <h1 className="text-4xl font-bold text-white mb-4 font-poppins ">
                                 {product.name}
                             </h1>
                             <div className="flex items-center space-x-4 mb-6">
@@ -168,10 +168,10 @@ const ProductDetail = () => {
                         </div>
 
                         {/* Pricing */}
-                        <div className="glass-morphism rounded-2xl p-6 lightning-border">
+                        <div className="rounded-2xl p-6 ">
                             <div className="flex items-center justify-between mb-4">
                                 <div className="flex items-center space-x-4">
-                                    <span className="text-3xl font-bold text-premium-gold animate-pulse-glow">
+                                    <span className="text-3xl font-bold text-premium-gold ">
                                         {product.price}
                                     </span>
                                     <span className="text-lg text-white/50 line-through">
@@ -257,9 +257,9 @@ const ProductDetail = () => {
                 {/* Description & Specifications */}
                 <div className="grid lg:grid-cols-2 gap-12 mt-16">
                     {/* Description */}
-                    <div className="glass-morphism rounded-2xl p-8 lightning-border">
+                    <div className="rounded-2xl p-8 lightning-border">
                         <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                            <Zap className="w-6 h-6 mr-2 text-premium-gold animate-lightning" />
+                            <Zap className="w-6 h-6 mr-2 text-premium-gold" />
                             Product Description
                         </h3>
                         <pre className="text-white/80 text-lg leading-relaxed whitespace-pre-wrap break-words">
@@ -269,7 +269,7 @@ const ProductDetail = () => {
                     </div>
 
                     {/* Specifications */}
-                    <div className="glass-morphism rounded-2xl p-8">
+                    <div className=" rounded-2xl p-8">
                         <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                             <Award className="w-6 h-6 mr-2 text-premium-blue" />
                             Technical Specifications

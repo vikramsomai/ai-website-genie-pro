@@ -51,17 +51,17 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
     <section className="py-24 relative overflow-hidden">
       {/* LED Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-primary/5 to-black/30"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-primary/5 to-black/30"></div> */}
 
         {/* Dynamic Lightning Effects */}
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-px h-32 bg-premium-gold animate-lightning opacity-40"></div>
           <div className="absolute top-3/4 right-1/3 w-px h-24 bg-premium-blue animate-lightning opacity-30" style={{ animationDelay: '1.5s' }}></div>
           <div className="absolute bottom-1/3 left-2/3 w-px h-40 bg-premium-gold animate-lightning opacity-35" style={{ animationDelay: '3s' }}></div>
-        </div>
+        </div> */}
 
         {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute inset-0 overflow-hidden">
           {Array.from({ length: 12 }).map((_, i) => (
             <div
               key={i}
@@ -74,19 +74,19 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
               }}
             />
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-premium-gold/10 border border-premium-gold/20 rounded-full px-6 py-3 mb-6 animate-glow">
-            <Award className="w-4 h-4 text-premium-gold animate-pulse" />
+          <div className="inline-flex items-center space-x-2 bg-premium-gold/10 border border-premium-gold/20 rounded-full px-6 py-3 mb-6 ">
+            <Award className="w-4 h-4 text-premium-gold" />
             <span className="text-premium-gold font-medium tracking-wide">Premium Collection</span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins animate-glow">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins ">
             Featured
-            <span className="block bg-gradient-to-r from-premium-gold to-yellow-500 bg-clip-text text-transparent animate-neon-pulse">
+            <span className="block bg-gradient-to-r from-premium-gold to-yellow-500 bg-clip-text text-transparent">
               Products
             </span>
           </h2>
@@ -100,17 +100,17 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
           {filteredProducts.map((product, index) => (
             <div
               key={product.id}
-              className="group relative glass-morphism rounded-3xl border border-white/20 overflow-hidden shadow-glow hover:shadow-neon transition-all duration-500 hover:-translate-y-3 hover:scale-105 lightning-border animate-fade-in"
+              className="group relative rounded-3xl border border-white/20 overflow-hidden shadow-glow hover:shadow-neon transition-all duration-500 hover:-translate-y-3 hover:scale-105 lightning-border"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Badge */}
-              <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold z-20 animate-neon-pulse ${getBadgeColor(product.badge)}`}>
+              <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold z-20 ${getBadgeColor(product.badge)}`}>
                 {product.badge}
               </div>
 
               {/* Stock Status */}
               {!product.inStock && (
-                <div className="absolute top-4 right-4 bg-red-500/80 text-white px-3 py-1 rounded-full text-xs font-bold z-20 animate-pulse backdrop-blur-sm">
+                <div className="absolute top-4 right-4 bg-red-500/80 text-white px-3 py-1 rounded-full text-xs font-bold z-20  backdrop-blur-sm">
                   Out of Stock
                 </div>
               )}
@@ -204,7 +204,7 @@ const ProductGrid = ({ selectedCategory }: ProductGridProps) => {
                       {product.originalPrice}
                     </span>
                   </div>
-                  <div className="text-sm text-whatsapp font-bold bg-whatsapp/20 border border-whatsapp/30 px-2 py-1 rounded-lg">
+                  <div className="text-sm text-whatsapp font-bold bg-whatsapp/30 border border-whatsapp/30 px-2 py-1 rounded-lg">
                     Save ₹{parseInt(product.originalPrice.replace(/[^\d]/g, '')) - parseInt(product.price.replace(/[^\d]/g, ''))}
                   </div>
                 </div>

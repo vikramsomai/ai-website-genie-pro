@@ -35,7 +35,7 @@ const Index = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent mb-6 animate-pulse-glow">
+            <h2 className="text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent mb-6 ">
               About TechSquad
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed animate-fade-in">
@@ -50,7 +50,7 @@ const Index = () => {
                 { title: "Custom Solutions", desc: "Tailored LED solutions designed specifically for your unique requirements." }
               ].map((item, index) => (
                 <div key={index} className="p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 glass-morphism hover:shadow-glow hover:-translate-y-2 hover:scale-105 lightning-border animate-slide-up" style={{ animationDelay: `${index * 200}ms` }}>
-                  <h3 className="text-xl font-semibold mb-3 text-primary hover:text-premium-gold transition-colors">{item.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary hover:text-premium-gold ">{item.title}</h3>
                   <p className="text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
@@ -60,11 +60,11 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-primary/5 to-background relative animate-fade-in">
+      <section id="contact" className="py-20 bg-gradient-to-br from-primary/5 to-background relative ">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-40 right-40 w-6 h-6 bg-premium-gold rounded-full animate-pulse-glow"></div>
-          <div className="absolute bottom-40 left-40 w-4 h-4 bg-premium-blue rounded-full animate-lightning"></div>
+          <div className="absolute top-40 right-40 w-6 h-6 bg-premium-gold rounded-full "></div>
+          <div className="absolute bottom-40 left-40 w-4 h-4 bg-premium-blue rounded-full "></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -72,35 +72,35 @@ const Index = () => {
             <h2 className="text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent mb-6 ">
               Get In Touch
             </h2>
-            <p className="text-lg text-muted-foreground mb-12 animate-fade-in">
+            <p className="text-lg text-muted-foreground mb-12">
               Ready to transform your space with premium LED solutions? Contact us today for a consultation.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 glass-morphism hover:shadow-glow hover:-translate-y-2 hover:scale-105 lightning-border animate-slide-up">
-                <h3 className="text-2xl font-semibold mb-4 text-primary hover:text-premium-gold transition-colors">Contact Information</h3>
+              <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 glass-morphism hover:shadow-glow hover:-translate-y-2 hover:scale-105 lightning-border">
+                <h3 className="text-2xl font-semibold mb-4 text-primary hover:text-premium-gold ">Contact Information</h3>
                 <div className="space-y-4 text-left">
-                  {/* <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                  {/* <p className="flex items-center text-muted-foreground hover:text-foreground ">
                     <span className="font-medium mr-2">📧 Email:</span> info@techsquad.com
                   </p> */}
-                  <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                  <p className="flex items-center text-muted-foreground hover:text-foreground ">
                     <span className="font-medium mr-2">📱 Phone:</span> +91 9274488477
                   </p>
-                  <p className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                  <p className="flex items-center text-muted-foreground hover:text-foreground ">
                     <span className="font-medium mr-2">Address:</span>Parvat patiya near,chabutra circle
                     Surat
                   </p>
                 </div>
               </div>
-              <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 glass-morphism hover:shadow-glow hover:-translate-y-2 hover:scale-105 lightning-border animate-slide-up" style={{ animationDelay: '200ms' }}>
-                <h3 className="text-2xl font-semibold mb-4 text-primary hover:text-premium-gold transition-colors">Business Hours</h3>
+              <div className="p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 glass-morphism hover:shadow-glow hover:-translate-y-2 hover:scale-105 lightning-border " style={{ animationDelay: '200ms' }}>
+                <h3 className="text-2xl font-semibold mb-4 text-primary hover:text-premium-gold ">Business Hours</h3>
                 <div className="space-y-3 text-left">
-                  <p className="flex justify-between text-muted-foreground hover:text-foreground transition-colors">
+                  <p className="flex justify-between text-muted-foreground hover:text-foreground ">
                     <span>Monday - Friday</span> <span>9:00 AM - 7:00 PM</span>
                   </p>
-                  <p className="flex justify-between text-muted-foreground hover:text-foreground transition-colors">
+                  <p className="flex justify-between text-muted-foreground hover:text-foreground ">
                     <span>Saturday</span> <span>10:00 AM - 6:00 PM</span>
                   </p>
-                  <p className="flex justify-between text-muted-foreground hover:text-foreground transition-colors">
+                  <p className="flex justify-between text-muted-foreground hover:text-foreground ">
                     <span>Sunday</span> <span>Closed</span>
                   </p>
                 </div>

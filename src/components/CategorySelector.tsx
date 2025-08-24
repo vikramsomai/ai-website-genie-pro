@@ -74,13 +74,13 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
         </div> */}
 
         {/* Scanning Lines */}
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
           <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-premium-blue to-transparent animate-slide-down opacity-40"></div>
           <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-premium-gold to-transparent animate-slide-down opacity-30" style={{ animationDelay: '2s' }}></div>
-        </div>
+        </div> */}
 
         {/* Floating Circuit Elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute inset-0 overflow-hidden">
           {Array.from({ length: 15 }).map((_, i) => (
             <div
               key={i}
@@ -93,19 +93,19 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
               }}
             />
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-premium-gold/10 border border-premium-gold/20 rounded-full px-6 py-3 mb-6 animate-glow">
-            <CheckCircle className="w-4 h-4 text-premium-gold animate-pulse" />
+          <div className="inline-flex items-center space-x-2 bg-premium-gold/10 border border-premium-gold/20 rounded-full px-6 py-3 mb-6 ">
+            <CheckCircle className="w-4 h-4 text-premium-gold" />
             <span className="text-premium-gold font-medium tracking-wide">Premium Product Range</span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins animate-glow">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins ">
             Our Product
-            <span className="block bg-gradient-to-r from-premium-gold to-yellow-500 bg-clip-text text-transparent pb-2 animate-neon-pulse">
+            <span className="block bg-gradient-to-r from-premium-gold to-yellow-500 bg-clip-text text-transparent pb-2 ">
               Categories
             </span>
           </h2>
@@ -123,7 +123,7 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
             return (
               <div
                 key={category.id}
-                className={`rounded-xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:scale-105 glass-morphism lightning-border animate-fade-in ${isSelected ? 'scale-105 z-10 shadow-neon' : ''
+                className={`rounded-xl group relative cursor-pointer transition-all duration-500  ${isSelected ? 'scale-105 z-10 shadow-neon' : ''
                   }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => onCategoryChange(category.id)}
@@ -155,8 +155,8 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
                   </div>
 
                   {/* Content */}
-                  <h3 className={`font-bold text-xl mb-3 font-poppins transition-colors duration-300 ${isSelected ? 'text-premium-gold animate-neon-pulse' : 'text-white group-hover:text-premium-gold'
-                    }`}>
+                  <h3 className={`font-bold text-xl mb-3 font-poppins transition-colors duration-300 
+                    `}>
                     {category.name}
                   </h3>
 
@@ -176,7 +176,7 @@ const CategorySelector = ({ selectedCategory, onCategoryChange }: CategorySelect
 
                   {/* Action */}
                   <Button
-                    variant={isSelected ? "premium" : "glass"}
+                    variant={isSelected ? "glass" : "glass"}
                     size="sm"
                     className="w-full group/btn transition-all duration-300 hover:shadow-glow"
                   >
